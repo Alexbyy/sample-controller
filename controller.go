@@ -270,6 +270,32 @@ func (c *Controller) syncHandler(key string) error {
 		return nil
 	}
 
+	//podList, err := c.kubeclientset.CoreV1().Pods("monitoring").List(context.TODO(), metav1.ListOptions{})
+	//if err != nil {
+	//	log.Printf("获取pod信息出现错误：" + err.Error())
+	//}else{
+	//	for _, val := range podList.Items {
+	//		fmt.Printf("pod的名字是：" + val.Name + "\n" )
+	//	}
+	//}
+	//
+	//cmList, err := c.kubeclientset.CoreV1().ConfigMaps("monitoring").List(context.TODO(), metav1.ListOptions{})
+	//if err != nil {
+	//	log.Printf("获取ConfigMaps信息出现错误：" + err.Error())
+	//}else{
+	//	fmt.Printf("cmList.Items[1].String(): %s\n",cmList.Items[1].String())
+	//	//for _, val := range cmList.Items {
+	//	//	fmt.Printf("ConfigMaps的名字是：" + val.Name + "\n" )
+	//	//}
+	//}
+	//
+	//fluentdCm, err := c.kubeclientset.CoreV1().ConfigMaps("monitoring").Get(context.TODO(),"fluentd-snmptrapd", metav1.GetOptions{})
+	//if err != nil {
+	//	log.Printf("获取fluentdCm信息出现错误：" + err.Error())
+	//}else{
+	//	fmt.Printf("fluentdCm.String(): %s\n",fluentdCm.String())
+	//}
+
 	// Get the deployment with the name specified in Foo.spec
 	deployment, err := c.deploymentsLister.Deployments(foo.Namespace).Get(deploymentName)
 	// If the resource doesn't exist, we'll create it
@@ -422,3 +448,4 @@ func newDeployment(foo *samplev1alpha1.Foo) *appsv1.Deployment {
 		},
 	}
 }
+

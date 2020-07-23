@@ -1,0 +1,14 @@
+# See the OWNERS docs at https://go.k8s.io/owners
+
+approvers:
+- lavalamp
+- wojtek-t
+- sttts
+reviewers:
+- lavalamp
+- wojtek-t
+- sttts
+labels:
+- sig/api-machinery
+- triage/needs-information
+- area/code-generation
